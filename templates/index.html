@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+
+{% block title %}
+Intermediação de negócios em telecomunicações e consultoria em projetos | EP Conexões & Negócios
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="container hero-grid">
+        <div class="hero-content">
+            <h1>
+                Intermediação de Negócios em Telecomunicações
+            </h1>
+            <p class="hero-description">
+                Com foco no segmento de telecomunicações.
+                Realizamos a intermediação de compra e/ou
+                venda de last mile, fornecemos consultoria
+                em projetos.
+            </p>
+            <a href="#contato" class="button button-primary">
+                Consulte
+            </a>
+        </div>
+
+        <div class="hero-image-wrapper">
+            <img
+                src="{{ url_for('static', filename='images/hero-telecom.jpg') }}"
+                alt="Profissional trabalhando em infraestrutura de telecomunicações"
+                class="hero-image"
+                loading="eager"
+            >
+        </div>
+    </div>
+</section>
+
+<section class="section section-services">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Especialistas em negócios de telecomunicações</h2>
+            <p class="stars" aria-label="Avaliação 5 estrelas">★★★★★</p>
+        </div>
+
+        <div class="cards-grid">
+            <article class="service-card">
+                <h3>Intermediação de negócios</h3>
+                <p>
+                    Empresa especializada em intermediação
+                    de negócios no segmento de telecomunicações,
+                    com foco na compra e venda de last mile.
+                </p>
+            </article>
+
+            <article class="service-card">
+                <h3>Consultoria em projetos</h3>
+                <p>
+                    Realizamos consultoria especializada em
+                    projetos de telecomunicações para garantir
+                    o sucesso de sua empresa.
+                </p>
+            </article>
+
+            <article class="service-card">
+                <h3>Compra e venda</h3>
+                <p>
+                    Facilitamos a compra e venda de last mile
+                    no setor de telecomunicações, garantindo
+                    negócios eficientes e lucrativos.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section section-about">
+    <div class="container content-grid">
+        <div>
+            <h2>Conexões &amp; Negócios em Telecomunicações</h2>
+        </div>
+        <div>
+            <p>
+                Somos especialistas em negócios de last mile
+                e consultoria em projetos de telecomunicações.
+                Nossa empresa facilita a compra e venda de
+                serviços de última milha, proporcionando
+                soluções personalizadas para atender às
+                necessidades de nossos clientes.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section section-expertise">
+    <div class="container expertise-grid">
+        <div class="expertise-copy">
+            <h2>Especialistas em Last Mile</h2>
+            <h3>Consultoria em Projetos Personalizados</h3>
+            <p>
+                Nosso foco é intermediar negócios no segmento de
+                telecomunicações, oferecendo serviços especializados
+                para atender às demandas do mercado. Conte com nossa
+                expertise para encontrar as melhores soluções em
+                last mile e projetos personalizados.
+            </p>
+        </div>
+        <div class="expertise-image">
+            <img
+                src="{{ url_for('static', filename='images/last-mile.jpg') }}"
+                alt="Infraestrutura de telecomunicações em last mile"
+            >
+        </div>
+    </div>
+</section>
+
+<section class="section section-cta">
+    <div
+        class="cta-banner"
+        style="background-image: url('{{ url_for('static', filename='images/cta-network.jpg') }}')"
+    >
+        <div class="container cta-inner">
+            <div class="cta-intro">
+                <h2>Intermediação Negócios</h2>
+                <p>Facilitamos compra e venda de last mile e consultoria em projetos.</p>
+            </div>
+
+            <div class="cta-cards">
+                <article class="cta-card">
+                    <h3>Compra e Venda</h3>
+                    <p>Facilitamos negócios de last mile. Consulte-nos para mais informações.</p>
+                    <a href="#contato" class="button button-primary">Consulte</a>
+                </article>
+                <article class="cta-card">
+                    <h3>Consultoria Projetos</h3>
+                    <p>Oferecemos consultoria especializada em projetos de telecomunicações. Entre em contato.</p>
+                    <a href="#contato" class="button button-ghost">Contato</a>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section contact-section" id="contato">
+    <div class="container contact-grid">
+        <div class="section-heading">
+            <h2>Entre em contato</h2>
+            <p>
+                Para mais informações sobre nossos serviços
+                de intermediação em telecomunicações,
+                consultoria e projetos.
+            </p>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-list">
+                    {% for category, message in messages %}
+                        <p class="flash flash-{{ category }}">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form
+            class="contact-form"
+            action="{{ url_for('main.contato') }}"
+            method="post"
+        >
+            <label>
+                Nome completo do cliente
+                <input
+                    type="text"
+                    name="nome"
+                    placeholder="Digite seu nome completo aqui"
+                    required
+                >
+            </label>
+            <label>
+                WhatsApp*
+                <input
+                    type="tel"
+                    name="whatsapp"
+                    placeholder="(DDD) 9 9999-9999"
+                    required
+                >
+            </label>
+            <label>
+                Endereço de e-mail*
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Digite seu e-mail aqui"
+                    required
+                >
+            </label>
+            <label>
+                Mensagem*
+                <textarea
+                    name="mensagem"
+                    rows="5"
+                    placeholder="Digite sua mensagem aqui"
+                    required
+                ></textarea>
+            </label>
+            <button type="submit" class="button button-primary">
+                Enviar mensagem agora
+            </button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

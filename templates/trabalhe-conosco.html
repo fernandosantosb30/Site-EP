@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block title %}
+Trabalhe conosco | EP Conexões & Negócios
+{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+    <div class="container page-hero-inner">
+        <p class="eyebrow">EP CONEXÕES &amp; NEGÓCIOS</p>
+        <h1>Trabalhe conosco</h1>
+        <p class="hero-description">
+            Buscamos profissionais que queiram atuar na intermediação
+            de negócios em telecomunicações, last mile e consultoria
+            em projetos.
+        </p>
+    </div>
+</section>
+
+<section class="section section-about">
+    <div class="container content-grid">
+        <div>
+            <h2>Faça parte das conexões que movem o mercado</h2>
+        </div>
+        <div>
+            <p>
+                A EP Conexões &amp; Negócios atua na compra e venda de
+                last mile e na consultoria em projetos de telecomunicações.
+                Se você tem perfil comercial, técnico ou de relacionamento
+                com o mercado, envie sua apresentação.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section contact-section" id="candidatura">
+    <div class="container contact-grid">
+        <div class="section-heading">
+            <h2>Candidate-se</h2>
+            <p>
+                Preencha o formulário. Sua mensagem será encaminhada
+                pelo WhatsApp da empresa
+                {% if candidature_email %}
+                    ou para {{ candidature_email }}
+                {% endif %}.
+            </p>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-list">
+                    {% for category, message in messages %}
+                        <p class="flash flash-{{ category }}">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        {% if candidature_url %}
+            <a
+                class="button button-primary"
+                href="{{ candidature_url }}"
+            >
+                Enviar candidatura
+            </a>
+        {% else %}
+            <form
+                class="contact-form"
+                action="{{ url_for('main.candidatura') }}"
+                method="post"
+            >
+                <label>
+                    Nome completo
+                    <input
+                        type="text"
+                        name="nome"
+                        placeholder="Digite seu nome completo aqui"
+                        required
+                    >
+                </label>
+                <label>
+                    Telefone / WhatsApp*
+                    <input
+                        type="tel"
+                        name="telefone"
+                        placeholder="(DDD) 9 9999-9999"
+                        required
+                    >
+                </label>
+                <label>
+                    Endereço de e-mail*
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Digite seu e-mail aqui"
+                        required
+                    >
+                </label>
+                <label>
+                    Mensagem*
+                    <textarea
+                        name="mensagem"
+                        rows="5"
+                        placeholder="Conte um pouco da sua experiência"
+                        required
+                    ></textarea>
+                </label>
+                <button type="submit" class="button button-primary">
+                    Enviar candidatura
+                </button>
+            </form>
+        {% endif %}
+    </div>
+</section>
+
+{% endblock %}
