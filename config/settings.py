@@ -9,8 +9,7 @@ load_dotenv()
 class Config:
 
     SECRET_KEY = os.getenv(
-        "SECRET_KEY",
-        "development-secret-key"
+        "SECRET_KEY"
     )
 
     CANDIDATURE_URL = os.getenv(

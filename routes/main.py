@@ -17,9 +17,9 @@ WHATSAPP_SECONDARY = "555581450635"
 main_bp = Blueprint("main", __name__)
 
 
-def _whatsapp_url(text):
+def _whatsapp_url(text, number=WHATSAPP_PRIMARY):
     return (
-        f"https://wa.me/{WHATSAPP_PRIMARY}"
+        f"https://wa.me/{number}"
         f"?text={quote(text)}"
     )
 
