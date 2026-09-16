@@ -47,6 +47,7 @@ def contato():
     whatsapp = request.form.get("whatsapp", "").strip()
     email = request.form.get("email", "").strip()
     mensagem = request.form.get("mensagem", "").strip()
+    interesse = request.form.get("interesse", "").strip()
 
     if not all([nome, whatsapp, email, mensagem]):
         flash("Preencha todos os campos obrigatórios.", "error")
@@ -55,8 +56,9 @@ def contato():
     text = (
         f"Olá, meu nome é {nome}.\n"
         f"WhatsApp: {whatsapp}\n"
-        f"E-mail: {email}\n\n"
-        f"{mensagem}"
+        f"E-mail: {email}\n"
+        + (f"Interesse: {interesse}\n" if interesse else "")
+        + f"\n{mensagem}"
     )
 
     return redirect(_whatsapp_url(text))

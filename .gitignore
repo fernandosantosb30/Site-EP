@@ -9,3 +9,5 @@ __pycache__/
 instance/
 
 *.log
+
+dist/

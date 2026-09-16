@@ -1,141 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta
-        name="description"
-        content="Somos uma empresa especializada na intermediação de negócios no segmento de telecomunicações, com foco na compra e venda de last mile. Além disso, oferecemos consultoria em projetos."
-    >
-    <title>
-        {% block title %}
-        Intermediação de negócios em telecomunicações e consultoria em projetos | EP Conexões & Negócios
-        {% endblock %}
-    </title>
+    <meta name="theme-color" content="#042940">
+    <meta name="description" content="EP Conexões & Negócios: intermediação de compra e venda de last mile e consultoria em projetos de telecomunicações. Vamos conectar seu próximo negócio.">
+    <title>{% block title %}EP Conexões & Negócios | Conectando oportunidades{% endblock %}</title>
     <link rel="icon" href="{{ url_for('static', filename='images/logo-ep.png') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Poppins:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
 </head>
-
 <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <header class="site-header">
-        <div class="header-container">
-            <a
-                href="{{ url_for('main.home') }}"
-                class="logo-link"
-                aria-label="EP Conexões & Negócios"
-            >
-                <img
-                    src="{{ url_for('static', filename='images/logo-ep.png') }}"
-                    alt="EP Conexões & Negócios"
-                    class="site-logo"
-                >
+        <div class="container header-container">
+            <a href="{{ url_for('main.home') }}" class="logo-link" aria-label="EP Conexões & Negócios — início">
+                <img src="{{ url_for('static', filename='images/logo-ep.png') }}" alt="EP Conexões & Negócios" width="375" height="277" class="site-logo">
             </a>
-
-            <button
-                class="menu-toggle"
-                type="button"
-                aria-expanded="false"
-                aria-controls="main-nav"
-                aria-label="Abrir menu"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <nav class="main-nav" id="main-nav">
-                <a
-                    href="{{ url_for('main.home') }}"
-                    class="nav-link{% if request.endpoint == 'main.home' %} active{% endif %}"
-                >
-                    HOME
-                </a>
-                <a
-                    href="{{ url_for('main.trabalhe_conosco') }}"
-                    class="nav-link{% if request.endpoint == 'main.trabalhe_conosco' %} active{% endif %}"
-                >
-                    TRABALHE CONOSCO
-                </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu"><span></span><span></span></button>
+            <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+                <a href="{{ url_for('main.home') }}" class="nav-link" {% if request.endpoint == 'main.home' %}aria-current="page"{% endif %}>Início</a>
+                <a href="{{ url_for('main.home') }}#solucoes" class="nav-link">Soluções</a>
+                <a href="{{ url_for('main.home') }}#sobre" class="nav-link">A EP</a>
+                <a href="{{ url_for('main.trabalhe_conosco') }}" class="nav-link" {% if request.endpoint == 'main.trabalhe_conosco' %}aria-current="page"{% endif %}>Trabalhe conosco</a>
+                <a href="{{ url_for('main.home') }}#contato" class="button button-small">Vamos conversar <span aria-hidden="true">↗</span></a>
             </nav>
         </div>
     </header>
-
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
-
+    <main id="conteudo">{% block content %}{% endblock %}</main>
     <footer class="site-footer" id="rodape">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <img
-                    src="{{ url_for('static', filename='images/logo-ep.png') }}"
-                    alt=""
-                    class="footer-logo"
-                >
-                <p>Entre Contato</p>
-                <a href="mailto:contato@epconexoesenegocios.com">
-                    contato@epconexoesenegocios.com
-                </a>
-                <a href="https://wa.me/5555999628003">
-                    WhatsApp (55) 9 9962-8003
-                </a>
-                <a href="https://wa.me/555581450635">
-                    WhatsApp (55) 8145-0635
-                </a>
+                <img src="{{ url_for('static', filename='images/logo-ep.png') }}" alt="EP Conexões & Negócios" width="375" height="277" class="footer-logo" loading="lazy">
+                <p>Boas conexões.<br>Novas possibilidades.</p>
             </div>
-
-            <div class="footer-social">
-                <a href="https://wa.me/5555999628003" aria-label="WhatsApp">
-                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-                        <path fill="currentColor" d="M20.5 3.5A11 11 0 0 0 2.1 17.8L1 23l5.3-1.1A11 11 0 0 0 20.5 3.5zm-8.5 17a9.1 9.1 0 0 1-4.6-1.3l-.3-.2-3.2.7.7-3.1-.2-.3A9.1 9.1 0 1 1 12 20.5zm5.3-6.8c-.3-.1-1.7-.8-1.9-.9s-.5-.1-.6.1-.8.9-.9 1.1-.4.2-.7.1a7.5 7.5 0 0 1-2.2-1.4 8.2 8.2 0 0 1-1.5-1.9c-.2-.3 0-.4.1-.6l.5-.6.1-.2c0-.1 0-.3 0-.4s-.6-1.5-.8-2-.5-.5-.6-.5h-.6c-.2 0-.5.1-.7.3s-.9.9-.9 2.1.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.7.5 0 1.5-.2 1.7-.8s.7-1.5.8-1.6.1-.3 0-.4-.3-.2-.6-.3z"/>
-                    </svg>
-                </a>
-                <a href="https://www.facebook.com/" aria-label="Facebook">
-                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-                        <path fill="currentColor" d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/>
-                    </svg>
-                </a>
-                <a href="https://www.instagram.com/epconexoes/" aria-label="Instagram">
-                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-                        <path fill="currentColor" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm10 2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm-5 3.2A3.8 3.8 0 1 1 8.2 12 3.8 3.8 0 0 1 12 8.2zm0 1.6A2.2 2.2 0 1 0 14.2 12 2.2 2.2 0 0 0 12 9.8zM17.2 7.1a.9.9 0 1 1-.9.9.9.9 0 0 1 .9-.9z"/>
-                    </svg>
-                </a>
-            </div>
-
-            <form
-                class="footer-consult"
-                action="{{ url_for('main.consulta') }}"
-                method="post"
-            >
-                <label for="consulta-email">Endereço de e-mail para contato</label>
-                <input
-                    id="consulta-email"
-                    type="email"
-                    name="email"
-                    placeholder="Digite seu e-mail aqui"
-                    required
-                >
-                <button type="submit" class="button button-primary">
-                    Enviar mensagem de consulta
-                </button>
-            </form>
+            <div class="footer-links"><h2>Explore</h2><a href="{{ url_for('main.home') }}#solucoes">Nossas soluções</a><a href="{{ url_for('main.home') }}#sobre">Sobre a EP</a><a href="{{ url_for('main.trabalhe_conosco') }}">Trabalhe conosco</a><a href="https://www.instagram.com/epconexoes/">Instagram ↗</a></div>
+            <div class="footer-links"><h2>Uma conversa conecta.</h2><a href="mailto:contato@epconexoesenegocios.com">contato@epconexoesenegocios.com</a><a href="https://wa.me/5555999628003">(55) 9 9962-8003 ↗</a><a href="https://wa.me/555581450635">(55) 8145-0635 ↗</a><p>Telecomunicações · Last mile · Consultoria</p></div>
         </div>
-
-        <div class="footer-bottom">
-            <p>© 2024. All rights reserved.</p>
-            <a href="https://wa.me/555581450635">WhatsApp (55) 8145-0635</a>
-        </div>
+        <div class="container footer-bottom"><p>© {{ current_year }} EP Conexões & Negócios. Todos os direitos reservados.</p><a href="#conteudo">Voltar ao topo ↑</a></div>
     </footer>
-
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
-
 </html>

@@ -1,0 +1,18 @@
+# Create a Static Site, not a Python Web Service, to avoid server cold starts.
+services:
+  - type: web
+    name: ep-conexoes-site
+    runtime: static
+    buildCommand: pip install -r requirements.txt && python build.py
+    staticPublishPath: ./dist
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+    routes:
+      - type: redirect
+        source: /trabalhe-conosco
+        destination: /trabalhe-conosco/

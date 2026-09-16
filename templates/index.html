@@ -1,211 +1,53 @@
 {% extends "base.html" %}
-
-{% block title %}
-Intermediação de negócios em telecomunicações e consultoria em projetos | EP Conexões & Negócios
-{% endblock %}
-
 {% block content %}
-
 <section class="hero">
     <div class="container hero-grid">
         <div class="hero-content">
-            <h1>
-                Intermediação de Negócios em Telecomunicações
-            </h1>
-            <p class="hero-description">
-                Com foco no segmento de telecomunicações.
-                Realizamos a intermediação de compra e/ou
-                venda de last mile, fornecemos consultoria
-                em projetos.
-            </p>
-            <a href="#contato" class="button button-primary">
-                Consulte
-            </a>
+            <p class="eyebrow"><span class="status-dot"></span> CONEXÕES QUE GERAM OPORTUNIDADES</p>
+            <h1>O próximo passo<br>do seu negócio<br>começa com uma<br><em>boa conexão.</em></h1>
+            <p class="hero-description">Conectamos empresas a oportunidades em telecomunicações. Intermediação de last mile e consultoria para transformar projetos em possibilidades.</p>
+            <div class="hero-actions"><a href="#contato" class="button">Conecte-se com a EP <span aria-hidden="true">↗</span></a><a href="#solucoes" class="text-link">Explore nossas soluções <span aria-hidden="true">↓</span></a></div>
+            <div class="hero-footnote"><span class="mini-network" aria-hidden="true">◎</span> Visão de mercado. Relações próximas. Conexões com propósito.</div>
         </div>
-
-        <div class="hero-image-wrapper">
-            <img
-                src="{{ url_for('static', filename='images/hero-telecom.jpg') }}"
-                alt="Profissional trabalhando em infraestrutura de telecomunicações"
-                class="hero-image"
-                loading="eager"
-            >
+        <div class="hero-visual">
+            <div class="image-label"><span class="status-dot"></span> PESSOAS. CONEXÕES. NEGÓCIOS.</div>
+            <img src="{{ url_for('static', filename='images/hero-telecom.jpg') }}" alt="Aperto de mãos que representa uma parceria de negócios" class="hero-image" width="1082" height="1040" fetchpriority="high">
+            <div class="image-caption"><span>É sobre aproximar<br><strong>oportunidades e pessoas.</strong></span><span class="round-arrow" aria-hidden="true">↗</span></div>
+            <div class="connection-tag"><span aria-hidden="true">◎</span><div>Do projeto à conexão.<small>EP Conexões & Negócios</small></div></div>
         </div>
     </div>
 </section>
-
-<section class="section section-services">
+<div class="specialties"><div class="container"><span>TELECOMUNICAÇÕES</span><i aria-hidden="true">✳</i><span>COMPRA E VENDA DE LAST MILE</span><i aria-hidden="true">✳</i><span>CONSULTORIA EM PROJETOS</span><i aria-hidden="true">✳</i></div></div>
+<section class="section section-services" id="solucoes">
     <div class="container">
-        <div class="section-heading">
-            <h2>Especialistas em negócios de telecomunicações</h2>
-            <p class="stars" aria-label="Avaliação 5 estrelas">★★★★★</p>
-        </div>
-
+        <div class="section-heading split-heading"><div><p class="eyebrow">/ NOSSAS SOLUÇÕES</p><h2>Conectamos o que você precisa.<br><span>Ampliamos o que é possível.</span></h2></div><p>Um olhar especializado para cada etapa do seu negócio em telecomunicações.</p></div>
         <div class="cards-grid">
-            <article class="service-card">
-                <h3>Intermediação de negócios</h3>
-                <p>
-                    Empresa especializada em intermediação
-                    de negócios no segmento de telecomunicações,
-                    com foco na compra e venda de last mile.
-                </p>
-            </article>
-
-            <article class="service-card">
-                <h3>Consultoria em projetos</h3>
-                <p>
-                    Realizamos consultoria especializada em
-                    projetos de telecomunicações para garantir
-                    o sucesso de sua empresa.
-                </p>
-            </article>
-
-            <article class="service-card">
-                <h3>Compra e venda</h3>
-                <p>
-                    Facilitamos a compra e venda de last mile
-                    no setor de telecomunicações, garantindo
-                    negócios eficientes e lucrativos.
-                </p>
-            </article>
+            <article class="service-card"><div class="card-top"><span class="service-icon" aria-hidden="true">⇄</span><span>01</span></div><h3>Intermediação<br>de negócios</h3><p>Aproximamos empresas e oportunidades no mercado de telecomunicações, com atenção às necessidades de cada negociação.</p><a href="#contato" class="service-link" data-interest="Intermediação de negócios">Vamos conectar <span aria-hidden="true">↗</span></a></article>
+            <article class="service-card"><div class="card-top"><span class="service-icon" aria-hidden="true">◎</span><span>02</span></div><h3>Compra e venda<br>de last mile</h3><p>Facilitamos a conexão entre quem oferece e quem precisa de infraestrutura de última milha para ampliar suas possibilidades.</p><a href="#contato" class="service-link" data-interest="Compra e venda de last mile">Explore oportunidades <span aria-hidden="true">↗</span></a></article>
+            <article class="service-card"><div class="card-top"><span class="service-icon" aria-hidden="true">⌘</span><span>03</span></div><h3>Consultoria<br>em projetos</h3><p>Um olhar técnico e estratégico para apoiar seus projetos de telecomunicações, com soluções alinhadas ao seu negócio.</p><a href="#contato" class="service-link" data-interest="Consultoria em projetos">Converse sobre seu projeto <span aria-hidden="true">↗</span></a></article>
         </div>
     </div>
 </section>
-
-<section class="section section-about">
-    <div class="container content-grid">
-        <div>
-            <h2>Conexões &amp; Negócios em Telecomunicações</h2>
-        </div>
-        <div>
-            <p>
-                Somos especialistas em negócios de last mile
-                e consultoria em projetos de telecomunicações.
-                Nossa empresa facilita a compra e venda de
-                serviços de última milha, proporcionando
-                soluções personalizadas para atender às
-                necessidades de nossos clientes.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section class="section section-expertise">
-    <div class="container expertise-grid">
-        <div class="expertise-copy">
-            <h2>Especialistas em Last Mile</h2>
-            <h3>Consultoria em Projetos Personalizados</h3>
-            <p>
-                Nosso foco é intermediar negócios no segmento de
-                telecomunicações, oferecendo serviços especializados
-                para atender às demandas do mercado. Conte com nossa
-                expertise para encontrar as melhores soluções em
-                last mile e projetos personalizados.
-            </p>
-        </div>
-        <div class="expertise-image">
-            <img
-                src="{{ url_for('static', filename='images/last-mile.jpg') }}"
-                alt="Infraestrutura de telecomunicações em last mile"
-            >
-        </div>
-    </div>
-</section>
-
-<section class="section section-cta">
-    <div
-        class="cta-banner"
-        style="background-image: url('{{ url_for('static', filename='images/cta-network.jpg') }}')"
-    >
-        <div class="container cta-inner">
-            <div class="cta-intro">
-                <h2>Intermediação Negócios</h2>
-                <p>Facilitamos compra e venda de last mile e consultoria em projetos.</p>
-            </div>
-
-            <div class="cta-cards">
-                <article class="cta-card">
-                    <h3>Compra e Venda</h3>
-                    <p>Facilitamos negócios de last mile. Consulte-nos para mais informações.</p>
-                    <a href="#contato" class="button button-primary">Consulte</a>
-                </article>
-                <article class="cta-card">
-                    <h3>Consultoria Projetos</h3>
-                    <p>Oferecemos consultoria especializada em projetos de telecomunicações. Entre em contato.</p>
-                    <a href="#contato" class="button button-ghost">Contato</a>
-                </article>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section contact-section" id="contato">
-    <div class="container contact-grid">
-        <div class="section-heading">
-            <h2>Entre em contato</h2>
-            <p>
-                Para mais informações sobre nossos serviços
-                de intermediação em telecomunicações,
-                consultoria e projetos.
-            </p>
-        </div>
-
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                <div class="flash-list">
-                    {% for category, message in messages %}
-                        <p class="flash flash-{{ category }}">{{ message }}</p>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        {% endwith %}
-
-        <form
-            class="contact-form"
-            action="{{ url_for('main.contato') }}"
-            method="post"
-        >
-            <label>
-                Nome completo do cliente
-                <input
-                    type="text"
-                    name="nome"
-                    placeholder="Digite seu nome completo aqui"
-                    required
-                >
-            </label>
-            <label>
-                WhatsApp*
-                <input
-                    type="tel"
-                    name="whatsapp"
-                    placeholder="(DDD) 9 9999-9999"
-                    required
-                >
-            </label>
-            <label>
-                Endereço de e-mail*
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Digite seu e-mail aqui"
-                    required
-                >
-            </label>
-            <label>
-                Mensagem*
-                <textarea
-                    name="mensagem"
-                    rows="5"
-                    placeholder="Digite sua mensagem aqui"
-                    required
-                ></textarea>
-            </label>
-            <button type="submit" class="button button-primary">
-                Enviar mensagem agora
-            </button>
+<section class="section section-about" id="sobre"><div class="container about-grid">
+    <div class="about-visual"><img src="{{ url_for('static', filename='images/last-mile.jpg') }}" alt="Representação de conexões de telecomunicações ao redor do mundo" width="768" height="386" loading="lazy" decoding="async"><div class="about-image-note"><span aria-hidden="true">↗</span> Conectar é o nosso ponto de partida.</div></div>
+    <div class="about-copy"><p class="eyebrow">/ A EP CONEXÕES & NEGÓCIOS</p><h2>Por trás de cada conexão,<br><em>uma nova possibilidade.</em></h2><p>Somos especialistas em intermediação de negócios no segmento de telecomunicações, com foco na compra e venda de last mile e na consultoria em projetos.</p><p>Acreditamos em relações próximas e soluções personalizadas. Entendemos o seu cenário para conectar sua empresa às oportunidades que fazem sentido para ela.</p><a class="text-link" href="#contato">Conheça a EP em uma conversa <span aria-hidden="true">↗</span></a></div>
+</div></section>
+<section class="section process-section"><div class="container"><div class="section-heading"><p class="eyebrow">/ NOSSO JEITO DE CONECTAR</p><h2>Da primeira conversa<br>ao próximo passo.</h2></div><div class="steps-grid"><article><span class="step-number"></span><h3>Entendemos seu cenário</h3><p>Ouvimos suas necessidades, seus desafios e o que sua empresa busca.</p></article><article><span class="step-number"></span><h3>Conectamos possibilidades</h3><p>Identificamos caminhos em last mile, negócios e projetos de telecomunicações.</p></article><article><span class="step-number"></span><h3>Construímos o próximo passo</h3><p>Apoiamos a conversa e a definição de uma solução alinhada aos seus objetivos.</p></article></div></div></section>
+<section class="section faq-section"><div class="container faq-grid"><div><p class="eyebrow">CONVERSA SEM COMPLICAÇÃO</p><h2>Antes de conectar,<br>vamos esclarecer.</h2></div><div class="faq-list"><details><summary>O que é last mile?<span aria-hidden="true">+</span></summary><p>Last mile, ou última milha, é o trecho da rede que conecta a infraestrutura de telecomunicações ao cliente final. A EP atua na intermediação de compra e venda desses serviços.</p></details><details><summary>Como a EP pode ajudar minha empresa?<span aria-hidden="true">+</span></summary><p>Conectamos oportunidades de compra e venda de last mile e oferecemos consultoria em projetos de telecomunicações. A primeira conversa nos ajuda a entender a sua necessidade.</p></details><details><summary>Como iniciar uma conversa?<span aria-hidden="true">+</span></summary><p>Preencha o formulário abaixo ou fale diretamente pelo WhatsApp. Ao usar o formulário, uma mensagem será preparada para você revisar e enviar no WhatsApp.</p></details></div></div></section>
+<section class="section contact-section" id="contato"><div class="container contact-grid">
+    <div class="contact-copy"><p class="eyebrow">VAMOS CONVERSAR</p><h2>Grandes conexões<br>começam com<br><em>um olá.</em></h2><p>Conte o que sua empresa precisa.<br>Vamos descobrir o próximo passo juntos.</p><a class="contact-direct" href="https://wa.me/5555999628003">Fale direto pelo WhatsApp <span aria-hidden="true">↗</span><small>(55) 9 9962-8003</small></a><a class="contact-email" href="mailto:contato@epconexoesenegocios.com">contato@epconexoesenegocios.com</a></div>
+    <div class="form-panel">
+        {% include "messages.html" %}
+        <form class="contact-form" action="{{ 'https://wa.me/5555999628003' if static_export else url_for('main.contato') }}" method="{{ 'get' if static_export else 'post' }}" data-whatsapp="contact">
+            <div class="form-intro"><h3>Qual é a sua próxima conexão?</h3><p>Preencha os campos para iniciar uma conversa.</p></div>
+            <div class="form-row"><label>Seu nome<input name="nome" autocomplete="name" placeholder="Como podemos chamar você?" required maxlength="120"></label><label>WhatsApp<input type="tel" name="whatsapp" autocomplete="tel" placeholder="(DDD) 9 9999-9999" required maxlength="30"></label></div>
+            <label>E-mail<input type="email" name="email" autocomplete="email" placeholder="voce@empresa.com.br" required maxlength="254"></label>
+            <label>Como podemos ajudar?<select name="interesse" id="interesse"><option value="">Selecione uma solução (opcional)</option>Intermediação de negócios</option><option>Compra e venda de last mile</option><option>Consultoria em projetos</option><option>Outros assuntos</option></select></label>
+            <label>Sua mensagem<textarea name="mensagem" rows="4" placeholder="Conte um pouco sobre o que você procura..." required maxlength="2000"></textarea></label>
+            <p class="form-note">Você será direcionado ao WhatsApp para revisar e enviar sua mensagem.</p>
+            <button type="submit" class="button">Continuar no WhatsApp <span aria-hidden="true">↗</span></button>
         </form>
+        <noscript><p>Para enviar seus dados, <a href="https://wa.me/5555999628003">fale diretamente pelo WhatsApp</a>.</p></noscript>
     </div>
-</section>
-
+</div></section>
 {% endblock %}

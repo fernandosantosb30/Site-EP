@@ -1,4 +1,5 @@
 from flask import Flask
+from datetime import datetime, timezone
 from config.settings import Config
 from routes.main import main_bp
 
@@ -13,6 +14,10 @@ def create_app():
     app.config.from_object(Config)
 
     app.register_blueprint(main_bp)
+
+    @app.context_processor
+    def site_context():
+        return {"current_year": datetime.now(timezone.utc).year, "static_export": False}
 
     return app
 
